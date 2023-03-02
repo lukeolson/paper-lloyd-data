@@ -4,7 +4,7 @@ This repository contains data for the manuscript "Generalizing Lloyd’s algorit
 
 **Code**
 
-All algorithms for the paper are implemented in [PyAMG](https://github.com/pyamg/pyamg), specifically with cocommit  [09113ab5a6f79466a8c1eacfc1716b3042da83d3](https://github.com/pyamg/pyamg/tree/09113ab5a6f79466a8c1eacfc1716b3042da83d3).
+All algorithms for the paper are implemented in [PyAMG](https://github.com/pyamg/pyamg), specifically with commit  [09113ab5a6f79466a8c1eacfc1716b3042da83d3](https://github.com/pyamg/pyamg/tree/09113ab5a6f79466a8c1eacfc1716b3042da83d3).
 
 There are a number of supporting tools for the examples, as listed in [requirements.txt](requirements.txt) and with pinned versions in [requirements-freeze.txt](requirements-freeze.txt):
   - `gmsh`, `pygmsh`: meshing
