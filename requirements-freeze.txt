@@ -1,0 +1,10 @@
+tqdm==4.64.1
+gmsh==4.11.1
+pygmsh==7.1.17
+numpy==1.24.2
+scipy==1.10.0
+matplotlib==3.6.3
+shapely==2.0.1
+pandas==1.5.3
+seaborn==0.12.2
+git+ssh://git@github.com/pyamg/pyamg.git@09113ab5a6f79466a8c1eacfc1716b3042da83d3#egg=pyamg

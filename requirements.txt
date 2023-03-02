@@ -1,0 +1,10 @@
+tqdm
+gmsh
+pygmsh
+numpy
+scipy
+matplotlib
+shapely
+pandas
+seaborn
+git+https://github.com/pyamg/pyamg.git@09113ab#egg=pyamg
