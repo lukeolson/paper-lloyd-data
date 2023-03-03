@@ -1,0 +1,18 @@
+Status of components:
+---------------------------------------------------------------------------
+|Package             |Branch                        |Revision  |Modified  |
+---------------------------------------------------------------------------
+|COFFEE              |master                        |70c1e66   |False     |
+|FInAT               |master                        |cd1d528   |False     |
+|PyOP2               |master                        |233f6dc3  |False     |
+|fiat                |master                        |f0846c9   |False     |
+|firedrake           |master                        |b195b5c9  |False     |
+|h5py                |firedrake                     |6cc4c912  |False     |
+|libspatialindex     |master                        |4768bf3   |True      |
+|libsupermesh        |master                        |69012e5   |False     |
+|loopy               |main                          |3988272b  |False     |
+|petsc               |firedrake                     |88014e7c40|False     |
+|pyadjoint           |master                        |4742834   |False     |
+|tsfc                |master                        |b6da9e0   |False     |
+|ufl                 |master                        |13435fbf  |False     |
+---------------------------------------------------------------------------

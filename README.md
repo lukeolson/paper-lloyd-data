@@ -12,7 +12,7 @@ There are a number of supporting tools for the examples, as listed in [requireme
   - `tqdm`: status bar
   - `matplotlib`, `shapely`, `pandas`, `seaborn`: plotting
 
-In addition, for the 3D examples, [firedrake](https://www.firedrakeproject.org) is used.
+In addition, for the 3D examples, [firedrake](https://www.firedrakeproject.org) is used.  A full list of versions is found in [firedrake-status.txt](firedrake-status.txt).
 
 ### Installation
 
@@ -69,3 +69,6 @@ $64\times 64$ mesh.
     - Additional example, anisotropic diffusion.
   - `bad_aggs_*.py`
     - Two example clusterings from Lloyd clustering on a $6 \times 6$ mesh.
+
+### Image Gallery
+
