@@ -72,26 +72,26 @@ $64\times 64$ mesh.
 
 ### Image Gallery
 
-| path | image |
-| ---- | ----- |
-| `disc/disc_allmethods` | <img src="images/disc_allmethods.png" height=200px/> |
-| `disc/disc_varynaggs` | <img src="images/disc_varynaggs.png" height=200px/> |
-| `disc/disc_p2_convergence` | <img src="images/disc_p2_convergence.png" height=200px/> |
-| `disc/disc_compareenergy_aggregates` | <img src="images/disc_compareenergy_aggregates.png" height=200px/> |
-| `disc/disc_wpd_stats` | <img src="images/disc_wpd_stats.png" height=200px/> |
-| `disc/disc_compareenergy_convergence` | <img src="images/disc_compareenergy_convergence.png" height=200px/> |
-| `disc/disc_p2_aggregates` | <img src="images/disc_p2_aggregates.png" height=200px/> |
-| `disc/disc_agg_R` | <img src="images/disc_agg_R.png" height=200px/> |
-| `unit_square/bad_aggs` | <img src="images/bad_aggs.png" height=200px/> |
-| `unit_square/anisotropic_aggregates` | <img src="images/anisotropic_aggregates.png" height=200px/> |
-| `unit_square/anisotropic_convergence` | <img src="images/anisotropic_convergence.png" height=200px/> |
-| `restricted_channel/restricted_channel_2d_variable_convergence` | <img src="images/restricted_channel_2d_variable_convergence.png" height=200px/> |
-| `restricted_channel/restricted_channel_2d_variable_aggregates` | <img src="images/restricted_channel_2d_variable_aggregates.png" height=200px/> |
-| `restricted_channel/restricted_channel_3d_convergence` | <img src="images/restricted_channel_3d_convergence.png" height=200px/> |
-| `restricted_channel/restricted_channel_3d_aggregates` | <img src="images/restricted_channel_3d_aggregates.png" height=200px/> |
-| `aggregation_quality/square_stats_comparison_64` | <img src="images/square_stats_comparison_64.png" height=200px/> |
-| `aggregation_quality/square_diameters_energy` | <img src="images/square_diameters_energy.png" height=200px/> |
-| `aggregation_quality/square_stats_comparison_all_n` | <img src="images/square_stats_comparison_all_n.png" height=200px/> |
-| `aggregation_quality/square_diameters_zero` | <img src="images/square_diameters_zero.png" height=200px/> |
-| `actii/actii-inset-2` | <img src="images/actii-inset-2.png" height=200px/> |
-| `actii/actii-full-2` | <img src="images/actii-full-2.png" height=200px/> |
+| directory | image |
+| --------- | :---- |
+| `disc` | <img src="images/disc_allmethods.png" height=200px/> |
+| `disc` | <img src="images/disc_varynaggs.png" height=200px/> |
+| `disc` | <img src="images/disc_p2_convergence.png" height=200px/> |
+| `disc` | <img src="images/disc_compareenergy_aggregates.png" height=200px/> |
+| `disc` | <img src="images/disc_wpd_stats.png" height=200px/> |
+| `disc` | <img src="images/disc_compareenergy_convergence.png" height=200px/> |
+| `disc` | <img src="images/disc_p2_aggregates.png" height=200px/> |
+| `disc` | <img src="images/disc_agg_R.png" height=200px/> |
+| `unit_square` | <img src="images/bad_aggs.png" height=200px/> |
+| `unit_square` | <img src="images/anisotropic_aggregates.png" height=200px/> |
+| `unit_square` | <img src="images/anisotropic_convergence.png" height=200px/> |
+| `restricted_channel` | <img src="images/restricted_channel_2d_variable_convergence.png" height=200px/> |
+| `restricted_channel` | <img src="images/restricted_channel_2d_variable_aggregates.png" height=200px/> |
+| `restricted_channel` | <img src="images/restricted_channel_3d_convergence.png" height=200px/> |
+| `restricted_channel` | <img src="images/restricted_channel_3d_aggregates.png" height=200px/> |
+| `aggregation_quality` | <img src="images/square_stats_comparison_64.png" height=200px/> |
+| `aggregation_quality` | <img src="images/square_diameters_energy.png" height=200px/> |
+| `aggregation_quality` | <img src="images/square_stats_comparison_all_n.png" height=200px/> |
+| `aggregation_quality` | <img src="images/square_diameters_zero.png" height=200px/> |
+| `actii` | <img src="images/actii-inset-2.png" height=200px/> |
+| `actii` | <img src="images/actii-full-2.png" height=200px/> |
