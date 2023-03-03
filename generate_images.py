@@ -13,8 +13,7 @@ for d in dirs:
         newf = os.path.join(images, os.path.basename(f))
         newf = os.path.splitext(newf)[0] + ".png"
         _ = subprocess.run(['convert', '-density', '300', f, newf])
-        # newrow = f'<tr><td>`{f}`</td><td><img src="{newf}" height=200px/></td></tr>\n'
-        newrow = f'| `{os.path.dirname(f)}` | <img src="{newf}" height=200px/> |\n'
+        newrow = f'| `{os.path.dirname(f)}` | <img src="{newf}" width=400px/> |\n'
         txt += newrow
 txt += ''
 with open('table.txt', 'w') as f:
