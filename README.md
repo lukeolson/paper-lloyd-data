@@ -36,7 +36,7 @@ The structure of the subdirectories generally adheres to the following format:
 The content of the subdirectories is as follows:
 
 - `aggregation_quality`
-  - `square_diameters_*.py`: Executes a 
+  - `square_diameters_*.py`:
     - Distribution of the number of clusters having zero diameter for balanced Lloyd
 clustering with or without tiebreaking for a $64\times 64$ mesh.
     - Distribution of the standard deviation in the number of nodes and distribution
