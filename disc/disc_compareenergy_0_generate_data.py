@@ -2,7 +2,6 @@
 import numpy as np
 import pyamg
 
-from disc_generate import gen_A
 import amgtheory
 
 
@@ -20,8 +19,11 @@ def energy_per_aggregate(ml, e, Te, DTe):
 
 
 def main():
-    print('generating problem...')
-    A, b, mesh, _ = gen_A(500, remove_dirichlet=True)
+    print('loading problem...')
+    with np.load('./disc_n=528_mesh_and_matrix.npz', allow_pickle=True) as data:
+        A = data['A'].tolist()
+        V = data['V']
+        E = data['E']
 
     # mainseed = 35583
     # mainseed = 100987
@@ -137,7 +139,7 @@ def main():
              res_blloyd54=res_blloyd54,
              res_blloyd50=res_blloyd50,
              res_lloyd5=res_lloyd5,
-             V=mesh.V, E=mesh.E, A=A)
+             V=V, E=E, A=A)
 
 
 if __name__ == '__main__':
