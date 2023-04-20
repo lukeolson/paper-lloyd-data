@@ -1,14 +1,11 @@
 """Import actii mesh and create distance matrix."""
 import numpy as np
 from scipy import sparse
-import meshio
 import pyamg
 
-mesh = meshio.read('./actii_78302.msh', file_format='gmsh')
-
-E = mesh.cells_dict['tetra']
-surface_tri = mesh.cells_dict['triangle']
-V = mesh.points
+with np.load('', allow_pickle=True) as data:
+    V = data['V']
+    E = data['E']
 
 ne = E.shape[0]
 ID = np.kron(np.arange(0, ne), np.ones((4,), dtype='int'))
