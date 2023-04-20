@@ -4,10 +4,12 @@ import matplotlib.pyplot as plt
 import pyamg
 from pyamg.vis import aggviz
 
-from disc_generate import gen_A
 from common import set_figure, fig_size
 
-A, b, mesh, bc = gen_A(12)
+with np.load('./disc_n=13_mesh_and_matrix.npz', allow_pickle=True) as data:
+    A = data['A'].tolist()
+    V = data['V']
+    E = data['E']
 
 seed = 194847
 np.random.seed(seed)
@@ -27,8 +29,6 @@ ml = pyamg.smoothed_aggregation_solver(A,
                                        )
 
 AggOp = ml.levels[0].AggOp
-V = mesh.V
-E = mesh.E
 
 fs = fig_size.singlefull
 set_figure(width=fs['width'], height=0.45*fs['width'])
