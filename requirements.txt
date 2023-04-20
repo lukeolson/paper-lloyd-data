@@ -1,6 +1,5 @@
 tqdm
 gmsh
-pygmsh
 numpy
 scipy
 matplotlib
