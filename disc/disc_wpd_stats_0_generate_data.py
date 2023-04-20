@@ -1,11 +1,12 @@
 """Run WPD test and gather statistics."""
 import numpy as np
-from disc_generate import gen_A
-
 import pyamg
 
-ntarget = 10000
-A, b, mesh, bc = gen_A(ntarget)
+with np.load('./disc_n=10249_mesh_and_matrix.npz', allow_pickle=True) as data:
+    A = data['A'].tolist()
+    V = data['V']
+    E = data['E']
+
 n = A.shape[0]
 print(mesh.V.shape, mesh.E.shape)
 
