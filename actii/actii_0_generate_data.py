@@ -3,7 +3,7 @@ import numpy as np
 from scipy import sparse
 import pyamg
 
-with np.load('', allow_pickle=True) as data:
+with np.load('./actii_78302.npz', allow_pickle=True) as data:
     V = data['V']
     E = data['E']
 

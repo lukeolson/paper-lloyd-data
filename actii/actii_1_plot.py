@@ -4,11 +4,9 @@ from scipy import sparse
 import pyamg
 import meshio
 
-mesh = meshio.read('./actii_78302.msh', file_format='gmsh')
-
-E2V = mesh.cells_dict['tetra']
-surface_tri = mesh.cells_dict['triangle']
-V = mesh.points
+with np.load('./actii_78302.npz', allow_pickle=True) as data:
+    V = data['V']
+    E2V = data['E']
 
 with np.load('./actii_0_output.npz') as data:
     clusters = data['clusters']
