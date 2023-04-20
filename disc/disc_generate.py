@@ -4,16 +4,8 @@ import pyamg
 from scipy import sparse
 from pyamg.gallery import fem
 
-mesher = ''
-try:
-    import gmsh
-    import pygmsh
-    mesher = 'pygmsh'
-except:
-    import optimesh
-    import dmsh
-    mesher = 'dmsh'
-
+import gmsh
+import pygmsh
 
 def _compute_num_boundary_points(total_num_points):
     # From https://github.com/nschloe/optimesh/blob/main/examples/create_circle.py
@@ -25,24 +17,14 @@ def _compute_num_boundary_points(total_num_points):
 
 def gen_disc_mesh(num_points):
     target_edge_length = 2 * np.pi / _compute_num_boundary_points(num_points)
-    if mesher == 'dmsh':
-        print('  [genA] generating dmsh')
-        geo = dmsh.Circle([0.0, 0.0], 1.0)
-        V, E = dmsh.generate(geo, target_edge_length)
-        print('  [genA] optimizing dmsh')
-        V, E = optimesh.optimize_points_cells(V, E, "CVT (full)", 1.0e-10, 100)
-    elif mesher == 'pygmsh':
-        print('  [genA] generating pygmsh')
-        with pygmsh.geo.Geometry() as geom:
-            geom.add_circle([0.0, 0.0], 1.0, mesh_size=target_edge_length)
-            mesh = geom.generate_mesh(verbose=False)
-            E = mesh.cells_dict['triangle'].astype(np.int32)
-            V = mesh.points[:,:2]
-    else:
-        raise ValueError('unkown mesher')
-    return V, E
 
-    return mesh
+    print('  [genA] generating pygmsh')
+    with pygmsh.geo.Geometry() as geom:
+        geom.add_circle([0.0, 0.0], 1.0, mesh_size=target_edge_length)
+        mesh = geom.generate_mesh(verbose=False)
+        E = mesh.cells_dict['triangle'].astype(np.int32)
+        V = mesh.points[:, :2]
+    return V, E
 
 def uexact(x, y):
     return (1 - x**2 - y**2) / 4
@@ -80,7 +62,7 @@ def verify():
         A, b, mesh, bc = gen_A(npts)
 
         u = sparse.linalg.spsolve(A, b)
-        uex = uexact(mesh.V[:,0], mesh.V[:,1])
+        uex = uexact(mesh.V[:, 0], mesh.V[:, 1])
         l2error = fem.l2norm(np.abs(u-uex), mesh)
         mpmesh = meshplex.Mesh(mesh.V, mesh.E)
         h = np.max(mpmesh.edge_lengths)
