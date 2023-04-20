@@ -1,9 +1,14 @@
 """2D P2 disc."""
-from disc_generate import gen_A
 import pyamg
 import numpy as np
+from pyamg.gallery import fem
 
-A, b, mesh, bc = gen_A(500, p=2)
+with np.load('./disc_n=528_p=2_mesh_and_matrix.npz', allow_pickle=True) as data:
+    A = data['A'].tolist()
+    V = data['V']
+    E = data['E']
+    V2 = data['V2']
+    E2 = data['E2']
 
 mainseed = 35583
 # mainseed = 100987
@@ -86,15 +91,15 @@ AggOp_std = ml.levels[0].AggOp
 res_std = res
 cycle_cx_std = ml.cycle_complexity()
 
-np.savez('./disc_p2_0_output.npz',
+np.savez('disc_p2_0_output.npz',
          AggOp_blloyd54=AggOp_blloyd54,
          AggOp_lloyd5=AggOp_lloyd5,
          AggOp_std=AggOp_std,
          res_blloyd54=res_blloyd54,
          res_lloyd5=res_lloyd5,
          res_std=res_std,
-         V=mesh.V, E=mesh.E, A=A,
-         V2=mesh.V2, E2=mesh.E2,
+         V=V, E=E, A=A,
+         V2=V2, E2=E2,
          cycle_cx_std=cycle_cx_std,
          cycle_cx_lloyd5=cycle_cx_lloyd5,
          cycle_cx_rblloyd=cycle_cx_rblloyd
