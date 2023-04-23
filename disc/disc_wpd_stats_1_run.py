@@ -69,4 +69,4 @@ for ratioid, ratio in enumerate(ratios):
         del ml
     print('', flush=True)
 
-np.savez('disc_wpd_stats_0_output.npz', cx=cx, rho=rho, ppa=ppa, levs=levs)
+np.savez('disc_wpd_stats_1_output.npz', cx=cx, rho=rho, ppa=ppa, levs=levs)

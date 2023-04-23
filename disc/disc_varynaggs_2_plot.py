@@ -4,8 +4,8 @@ import numpy as np
 from pyamg.vis import aggviz
 from common import set_figure, fig_size
 
-data = np.load('disc_varynaggs_0_output.npz', allow_pickle=True)
-datacore = np.load('disc_varynaggs_0_output2.npz', allow_pickle=True)
+data = np.load('disc_varynaggs_1_output.npz', allow_pickle=True)
+datacore = np.load('disc_varynaggs_1_output2.npz', allow_pickle=True)
 V = datacore['V']
 E = datacore['E']
 A = datacore['A'].tolist()

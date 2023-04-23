@@ -6,7 +6,7 @@ from common import set_figure, fig_size
 
 from pyamg import vis
 
-with np.load('./disc_p2_0_output.npz', allow_pickle=True) as data:
+with np.load('./disc_p2_1_output.npz', allow_pickle=True) as data:
     A = data['A'].tolist()
     V = data['V']
     E = data['E']

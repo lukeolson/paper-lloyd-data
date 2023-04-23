@@ -6,7 +6,7 @@ from scipy.interpolate import UnivariateSpline
 
 from common import set_figure, fig_size
 
-with np.load('disc_wpd_stats_0_output.npz', allow_pickle=True) as data:
+with np.load('disc_wpd_stats_1_output.npz', allow_pickle=True) as data:
     cx = data['cx']
     rho = data['rho']
     ppa = data['ppa']

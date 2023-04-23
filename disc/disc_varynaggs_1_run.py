@@ -40,5 +40,5 @@ for naggs in naggslist:
 print('\n')
 
 tosave = {f'{d[0]}': d[1] for d in zip(naggslist, AggOps)}
-np.savez('disc_varynaggs_0_output.npz', **tosave)
-np.savez('disc_varynaggs_0_output2.npz', V=V, E=E, A=A)
+np.savez('disc_varynaggs_1_output.npz', **tosave)
+np.savez('disc_varynaggs_1_output2.npz', V=V, E=E, A=A)

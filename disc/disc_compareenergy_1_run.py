@@ -132,7 +132,7 @@ def main():
 
     res_lloyd5 = res
 
-    np.savez('disc_compareenergy_0_output.npz',
+    np.savez('disc_compareenergy_1_output.npz',
              AggOp_blloyd54=AggOp_blloyd54, energy_blloyd54=energy_blloyd54,
              AggOp_blloyd50=AggOp_blloyd50, energy_blloyd50=energy_blloyd50,
              AggOp_lloyd5=AggOp_lloyd5, energy_lloyd5=energy_lloyd5,

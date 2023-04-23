@@ -91,7 +91,7 @@ AggOp_std = ml.levels[0].AggOp
 res_std = res
 cycle_cx_std = ml.cycle_complexity()
 
-np.savez('disc_p2_0_output.npz',
+np.savez('disc_p2_1_output.npz',
          AggOp_blloyd54=AggOp_blloyd54,
          AggOp_lloyd5=AggOp_lloyd5,
          AggOp_std=AggOp_std,
