@@ -3,7 +3,7 @@ import numpy as np
 from scipy.io import loadmat
 import pyamg
 
-data = loadmat('./restricted_channel_3d_0_output_matrix_coord.mat')
+data = loadmat('./restricted_channel_3d_matrix_and_mesh.mat')
 A = data['A'].tocsr()
 A.eliminate_zeros()
 
