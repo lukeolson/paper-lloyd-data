@@ -15,7 +15,6 @@ G = G.tocsr()
 E2E = G.T * G
 V2V = G * G.T
 V2V = V2V.tocsr().tocoo()
-print('here')
 
 A = V2V.copy()
 for k, (i, j) in enumerate(zip(V2V.row, V2V.col)):
