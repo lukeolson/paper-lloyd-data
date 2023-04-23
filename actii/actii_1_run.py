@@ -26,4 +26,4 @@ naggs = 20
 clusters, centers = pyamg.graph.balanced_lloyd_cluster(A, naggs,
                                                        maxiter=3, rebalance_iters=2)
 
-np.savez('actii_0_output.npz', clusters=clusters, centers=centers)
+np.savez('actii_1_output.npz', clusters=clusters, centers=centers)
