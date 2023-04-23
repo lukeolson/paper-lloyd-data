@@ -7,10 +7,14 @@ r"""Generate mesh for
    |        /         \        |
    1-------2     3     4-------5
 """
-import pygmsh
+import sys
 import matplotlib.pyplot as plt
 import numpy as np
-import sys
+
+import gmsh
+
+gmsh.initialize()
+gmsh.model.add("restricted_channel_2d")
 
 cl = 0.06
 cl_expand = 2
@@ -29,51 +33,77 @@ if uniform:
     cl_expand = 1
     cl_reduce = 1
 
-# point entities
-with pygmsh.geo.Geometry() as geom:
-    p1  = geom.add_point([-c, -1], cl*cl_expand)
-    p2  = geom.add_point([-r, -1], cl)
-    p3  = geom.add_point([ 0, -1], cl)
-    p4  = geom.add_point([ r, -1], cl)
-    p5  = geom.add_point([ c, -1], cl*cl_expand)
-    #
-    p6  = geom.add_point([ 0, -1+r], cl*cl_reduce)
-    p7  = geom.add_point([ 0,  1-r], cl*cl_reduce)
-    #
-    p8  = geom.add_point([-c,  1], cl*cl_expand)
-    p9  = geom.add_point([-r,  1], cl)
-    p10 = geom.add_point([ 0,  1], cl)
-    p11 = geom.add_point([ r,  1], cl)
-    p12 = geom.add_point([ c,  1], cl*cl_expand)
+gmsh.model.geo.add_point(-c, -1, 0, cl*cl_expand, 1)
+gmsh.model.geo.add_point(-r, -1, 0, cl, 2)
+gmsh.model.geo.add_point( 0, -1, 0, cl, 3)
+gmsh.model.geo.add_point( r, -1, 0, cl, 4)
+gmsh.model.geo.add_point( c, -1, 0, cl*cl_expand, 5)
+gmsh.model.geo.add_point( 0, -1+r, 0, cl*cl_reduce, 6)
+gmsh.model.geo.add_point( 0,  1-r, 0, cl*cl_reduce, 7)
+gmsh.model.geo.add_point(-c,  1, 0, cl*cl_expand, 8)
+gmsh.model.geo.add_point(-r,  1, 0, cl, 9)
+gmsh.model.geo.add_point( 0,  1, 0, cl, 10)
+gmsh.model.geo.add_point( r,  1, 0, cl, 11)
+gmsh.model.geo.add_point( c,  1, 0, cl*cl_expand, 12)
 
-    l1  = geom.add_line(p1, p2)
-    l2  = geom.add_circle_arc(p2, p3, p6)
-    l3  = geom.add_circle_arc(p6, p3, p4)
-    l4  = geom.add_line(p4, p5)
-    l5  = geom.add_line(p5, p12)
-    l6  = geom.add_line(p12, p11)
-    l7  = geom.add_circle_arc(p11, p10, p7)
-    l8  = geom.add_circle_arc(p7, p10, p9)
-    l9  = geom.add_line(p9, p8)
-    l10 = geom.add_line(p8, p1)
-    ll = geom.add_curve_loop([l1, l2, l3, l4, l5, l6, l7, l8, l9, l10])
-    geom.add_physical(ll, label='bc0')
+gmsh.model.geo.add_line(1, 2, 1)
+gmsh.model.geo.add_circle_arc(2, 3, 6, 2)
+gmsh.model.geo.add_circle_arc(6, 3, 4, 3)
+gmsh.model.geo.add_line(4, 5, 4)
+gmsh.model.geo.add_line(5, 12, 5)
+gmsh.model.geo.add_line(12, 11, 6)
+gmsh.model.geo.add_circle_arc(11, 10, 7, 7)
+gmsh.model.geo.add_circle_arc(7, 10, 9, 8)
+gmsh.model.geo.add_line(9, 8, 9)
+gmsh.model.geo.add_line(8, 1, 10)
+gmsh.model.geo.add_curve_loop([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 11)
 
-    ps = geom.add_plane_surface(ll)
+gmsh.model.geo.addPlaneSurface([11])
+gmsh.model.geo.addPhysicalGroup(2, [11], name='bc0')
 
-    # if not uniform:
-    #     field0 = geom.add_boundary_layer(lcmin=0.4, lcmax=0.8,
-    #                                      distmin=0.4, distmax=1.0,
-    #                                      edges_list=[l5, l10])
-    #     field1 = geom.add_boundary_layer(lcmin=0.03, lcmax=0.08,
-    #                                      distmin=0.02, distmax=.2,
-    #                                      edges_list=[l2, l3, l7, l8])
-    #     geom.set_background_mesh([field0, field1], operator="Min")
+# if not uniform:
+#     field0 = geom.add_boundary_layer(lcmin=0.4, lcmax=0.8,
+#                                      distmin=0.4, distmax=1.0,
+#                                      edges_list=[l5, l10])
+#     field1 = geom.add_boundary_layer(lcmin=0.03, lcmax=0.08,
+#                                      distmin=0.02, distmax=.2,
+#                                      edges_list=[l2, l3, l7, l8])
+#     geom.set_background_mesh([field0, field1], operator="Min")
 
-    mesh = geom.generate_mesh(dim=2, verbose=True)
-    #for cell in mesh.cells:
-    #    cell.data = cell.data.astype('int64')
-    # geom.save_geometry('test.geo_unrolled')
+gmsh.model.geo.synchronize()
+gmsh.model.mesh.generate(dim=2)
+#for cell in mesh.cells:
+#    cell.data = cell.data.astype('int64')
+# geom.save_geometry('test.geo_unrolled')
+
+# extract point coords
+_, V, _ = gmsh.model.mesh.getNodes()
+V = V.reshape(-1, 3)
+
+# get types
+elementTypes, elementTags, nodeTags = gmsh.model.mesh.getElements()
+i = list(elementTypes).index(2)
+assert elementTypes[i] == 2
+
+# get tags for triangles
+data = gmsh.model.mesh.getElementProperties(2)
+assert data[0] == 'Triangle 3'
+E = nodeTags[i].reshape(-1, data[3]) - 1  # 0-based indexing
+E = E.astype(np.int32)
+V = V[:, :2]
+
+# check to see if E is numbered 0 ... n
+ids = np.full((E.max()+1,), False)
+ids[E.ravel()] = True
+nv = np.sum(ids)
+if V.shape[0] != nv:
+    print('fixing V and E')
+    I = np.where(ids)[0]
+    J = np.arange(E.max()+1)
+    J[I] = np.arange(nv)
+    E = J[E]
+    V = V[I, :]
+n = V.shape[0]
 
 
 meshname = 'restricted_channel_2d_0_output_uniform'
@@ -84,10 +114,7 @@ if '--savemesh' in sys.argv:
     V = mesh.points[:, :2]
     E = mesh.cells_dict['triangle']
     np.savez(meshname+'.npz', V=V, E=E)
-    # mesh.write(meshname, file_format='gmsh')
 else:
-    E = mesh.cells_dict['triangle'].astype(np.int32)
-    V = mesh.points[:, :2]
     fig, ax = plt.subplots()
     ax.triplot(V[:, 0], V[:, 1], E, lw=0.5)
     ax.set_aspect('equal', 'box')
