@@ -49,6 +49,6 @@ _ = ml0.solve(b, x0=u0, tol=1e-12, maxiter=200, residuals=res0)
 res1 = []
 _ = ml1.solve(b, x0=u0, tol=1e-12, maxiter=200, residuals=res1)
 
-np.savez('./restricted_channel_3d_1_output_convergence_data.npz',
+np.savez('./restricted_channel_3d_1_output.npz',
          res_lloyd=res0,
          res_rblloyd=res1)

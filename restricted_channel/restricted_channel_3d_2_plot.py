@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from common import set_figure, fig_size
 
-data = np.load('./restricted_channel_3d_1_output_convergence_data.npz')
+data = np.load('./restricted_channel_3d_1_output.npz')
 res_lloyd = data['res_lloyd']
 res_rblloyd = data['res_rblloyd']
 

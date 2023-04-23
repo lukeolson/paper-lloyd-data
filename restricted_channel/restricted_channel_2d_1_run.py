@@ -4,7 +4,7 @@ import pyamg
 from pyamg.gallery import fem
 
 print('generating problem...')
-data = np.load('./restricted_channel_2d_0_output_variable.npz')
+data = np.load('./restricted_channel_2d_mesh.npz')
 E = data['E'].astype(np.int32)
 V = data['V']
 mesh = fem.Mesh(V, E)
