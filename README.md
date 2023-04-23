@@ -7,12 +7,14 @@ This repository contains data for the manuscript "Generalizing Lloyd’s algorit
 All algorithms for the paper are implemented in [PyAMG](https://github.com/pyamg/pyamg), specifically with commit  [09113ab5a6f79466a8c1eacfc1716b3042da83d3](https://github.com/pyamg/pyamg/tree/09113ab5a6f79466a8c1eacfc1716b3042da83d3).
 
 There are a number of supporting tools for the examples, as listed in [requirements.txt](requirements.txt) and with pinned versions in [requirements-freeze.txt](requirements-freeze.txt):
-  - `gmsh`, `pygmsh`: meshing
   - `numpy`, `scipy`: numerical data
   - `tqdm`: status bar
   - `matplotlib`, `shapely`, `pandas`, `seaborn`: plotting
 
-In addition, for the 3D examples, [firedrake](https://www.firedrakeproject.org) is used.  A full list of versions is found in [firedrake-status.txt](firedrake-status.txt).
+Some meshing and matrices are generated with `gmsh` and with
+[Firedrake](https://www.firedrakeproject.org). The data are saved or can be
+regenerated.  A full list of versions is found in
+[firedrake-status.txt](firedrake-status.txt).
 
 ### Installation
 
@@ -28,7 +30,6 @@ pip install -r requirements.txt
 
 The structure of the subdirectories generally adheres to the following format:
   - `figure.pdf`: represents the main figure in the manuscript
-  - `figure_0_generate.py`: generates problem data for the figure
   - `figure_1_run.py`: executes methods presented in the paper on the problem data
   - `figure_2_plot.py`: plots the run data
   - the output data is included in this repository
