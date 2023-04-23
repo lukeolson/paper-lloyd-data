@@ -8,7 +8,7 @@ with np.load('./actii_78302.npz', allow_pickle=True) as data:
     V = data['V']
     E2V = data['E']
 
-with np.load('./actii_0_output.npz') as data:
+with np.load('./actii_1_output.npz') as data:
     clusters = data['clusters']
     centers = data['centers']
 
