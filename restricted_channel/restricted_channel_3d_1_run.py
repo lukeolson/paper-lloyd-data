@@ -12,6 +12,7 @@ mesh_cells = data['mesh_cells']
 dof_coords = data['dof_coords']
 assert np.max(np.abs(mesh_coords - dof_coords)) < 1e-13
 
+np.random.seed(928234)
 ml0 = pyamg.smoothed_aggregation_solver(A,
                                         aggregate=('lloyd', {'measure': 'inv',
                                                              'ratio': 1/25,
@@ -24,6 +25,7 @@ ml0 = pyamg.smoothed_aggregation_solver(A,
                                         )
 
 
+np.random.seed(928234)
 ml1 = pyamg.smoothed_aggregation_solver(A,
                                         aggregate=('balanced lloyd', {'measure': 'inv',
                                                                       'ratio': 1/25,
