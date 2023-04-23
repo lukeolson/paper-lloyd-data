@@ -42,14 +42,14 @@ data_centers_with_tb = np.zeros((ntests, naggs), dtype=int)
 data_centers_without_tb = np.zeros((ntests, naggs), dtype=int)
 
 print('starting with tb')
-np.random.rand(seed)
+np.random.seed(seed)
 for testid in tqdm(range(ntests)):
     clusters, centers = pyamg.graph.balanced_lloyd_cluster(G, **balanced_lloyd_with)
     data_clusters_with_tb[testid, :] = clusters
     data_centers_with_tb[testid, :] = centers
 
 print('starting with tb')
-np.random.rand(seed)
+np.random.seed(seed)
 for testid in tqdm(range(ntests)):
     clusters, centers = pyamg.graph.balanced_lloyd_cluster(G, **balanced_lloyd_without)
     data_clusters_without_tb[testid, :] = clusters
