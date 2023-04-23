@@ -48,7 +48,7 @@ for testid in tqdm(range(ntests)):
     data_clusters_with_tb[testid, :] = clusters
     data_centers_with_tb[testid, :] = centers
 
-print('starting with tb')
+print('starting without tb')
 np.random.seed(seed)
 for testid in tqdm(range(ntests)):
     clusters, centers = pyamg.graph.balanced_lloyd_cluster(G, **balanced_lloyd_without)

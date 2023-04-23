@@ -67,7 +67,7 @@ def calculate_diameters_per_cluster(G, m):
     return diameter
 
 for gridn in [16, 32, 64, 128]:
-    with np.load(f'square_stats_comparison_0_output_{gridn}.npz') as data:
+    with np.load(f'square_stats_comparison_1a_output_{gridn}.npz') as data:
         m = data['m']
         c = data['c']
 
