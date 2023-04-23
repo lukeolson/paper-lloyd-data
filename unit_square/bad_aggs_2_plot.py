@@ -6,7 +6,7 @@ import shapely.geometry as sg
 from shapely.ops import unary_union
 from common import set_figure, fig_size
 
-data = np.load('bad_aggs_0_output.npz')
+data = np.load('bad_aggs_1_output.npz')
 G = sparse.csr_matrix(data['G'])
 X = data['X']
 Y = data['Y']

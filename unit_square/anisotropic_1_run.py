@@ -75,7 +75,7 @@ _ = ml.solve(b, x0=u0, tol=1e-12, maxiter=200, residuals=res)
 AggOp_lloyd5 = ml.levels[0].AggOp
 res_lloyd5 = res
 
-np.savez('./anisotropic_0_output.npz',
+np.savez('./anisotropic_1_output.npz',
          AggOp_blloyd54=AggOp_blloyd54,
          AggOp_lloyd5=AggOp_lloyd5,
          res_blloyd54=res_blloyd54,

@@ -7,7 +7,7 @@ import matplotlib.collections as collections
 
 from pyamg import vis
 
-with np.load('./anisotropic_0_output.npz', allow_pickle=True) as data:
+with np.load('./anisotropic_1_output.npz', allow_pickle=True) as data:
     A = data['A'].tolist()
     V = data['V']
     E = data['E']

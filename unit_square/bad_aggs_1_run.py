@@ -27,7 +27,7 @@ m1, c1 = pyamg.graph.lloyd_cluster(G, centers1, maxiter=5)
 centers2 = np.array([0, 1, 2, 6, 7, 8])  # singleton
 m2, c2 = pyamg.graph.lloyd_cluster(G, centers2, maxiter=5)
 
-np.savez('bad_aggs_0_output.npz',
+np.savez('bad_aggs_1_output.npz',
          X=X, Y=Y, G=G.toarray(),
          centers1=centers1, m1=m1, c1=c1,
          centers2=centers2, m2=m2, c2=c2)
