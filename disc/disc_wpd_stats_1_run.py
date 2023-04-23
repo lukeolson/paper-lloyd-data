@@ -8,7 +8,7 @@ with np.load('./disc_n=10249_mesh_and_matrix.npz', allow_pickle=True) as data:
     E = data['E']
 
 n = A.shape[0]
-print(mesh.V.shape, mesh.E.shape)
+print(V.shape, E.shape)
 
 seed0 = 348934
 np.random.seed(seed0)
