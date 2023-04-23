@@ -55,7 +55,7 @@ for testid in tqdm(range(ntests)):
     data_clusters_without_tb[testid, :] = clusters
     data_centers_without_tb[testid, :] = centers
 
-np.savez('square_diameters_0_output.npz',
+np.savez('square_diameters_1a_output.npz',
          C=C,
          data_clusters_with_tb=data_clusters_with_tb,
          data_clusters_without_tb=data_clusters_without_tb,

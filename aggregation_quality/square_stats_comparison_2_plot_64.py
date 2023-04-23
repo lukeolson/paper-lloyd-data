@@ -4,7 +4,7 @@ from common import fig_size, set_figure
 import pandas as pd
 import seaborn as sns
 
-with np.load('./square_stats_comparison_1_output_64.npz') as data:
+with np.load('./square_stats_comparison_1b_output_64.npz') as data:
     dev_cluster_size = data['dev_cluster_size']
     dev_diameters = data['dev_diameters']
     energy = data['energy']

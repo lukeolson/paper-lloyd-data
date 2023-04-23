@@ -54,5 +54,5 @@ for nx in tqdm([16, 32, 64, 128], desc='nx', colour='red', position=0, leave=Fal
         m[2, testid, :] = AggOp.indices
         c[2, testid, :] = centers
 
-    np.savez_compressed(f'square_stats_comparison_0_output_{nx}.npz',
+    np.savez_compressed(f'square_stats_comparison_1a_output_{nx}.npz',
                         m=m.astype(np.int16), c=c.astype(np.int16))

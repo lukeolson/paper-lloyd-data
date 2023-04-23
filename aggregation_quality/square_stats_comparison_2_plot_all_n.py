@@ -7,7 +7,7 @@ import seaborn as sns
 df = pd.DataFrame(columns =['nx', 'dmax', 'energy', 'method'])
 
 for gridn in [16, 32, 64, 128]:
-    with np.load(f'square_stats_comparison_1_output_{gridn}.npz') as data:
+    with np.load(f'square_stats_comparison_1b_output_{gridn}.npz') as data:
         diameters = data['diameters']
         energy = data['energy']
 

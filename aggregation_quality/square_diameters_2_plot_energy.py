@@ -5,7 +5,7 @@ import pandas as pd
 import seaborn as sns
 
 
-with np.load('square_diameters_1_output.npz') as data:
+with np.load('square_diameters_1b_output.npz') as data:
     stddev_with_tb = data['stddev_with_tb']
     stddev_without_tb = data['stddev_without_tb']
     energy_with_tb = data['energy_with_tb']

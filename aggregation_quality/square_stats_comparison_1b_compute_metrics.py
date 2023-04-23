@@ -108,7 +108,7 @@ for gridn in [16, 32, 64, 128]:
             distances, _, _ = pyamg.graph.bellman_ford(C, centers, method='standard')
             energy[method, testid] = np.sum(distances**2)
 
-    np.savez_compressed(f'square_stats_comparison_1_output_{gridn}.npz',
+    np.savez_compressed(f'square_stats_comparison_1b_output_{gridn}.npz',
                         diameters=diameters,
                         dev_cluster_size=dev_cluster_size,
                         dev_diameters=dev_diameters,

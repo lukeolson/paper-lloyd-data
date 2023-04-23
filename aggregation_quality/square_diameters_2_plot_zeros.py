@@ -5,7 +5,7 @@ import numpy as np
 from common import set_figure, fig_size
 from matplotlib import ticker
 
-with np.load('./square_diameters_0_output.npz', allow_pickle=True) as data:
+with np.load('./square_diameters_1b_output.npz', allow_pickle=True) as data:
     data_clusters_with_tb    = data['data_clusters_with_tb']       # noqa
     data_clusters_without_tb = data['data_clusters_without_tb']    # noqa
     data_centers_with_tb     = data['data_centers_with_tb']        # noqa

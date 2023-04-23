@@ -3,7 +3,7 @@ import numpy as np
 import pyamg
 from tqdm import tqdm
 
-with np.load('./square_diameters_0_output.npz', allow_pickle=True) as data:
+with np.load('./square_diameters_1a_output.npz', allow_pickle=True) as data:
     G = data['C'].tolist()
     data_clusters_with_tb    = data['data_clusters_with_tb']       # noqa
     data_clusters_without_tb = data['data_clusters_without_tb']    # noqa
@@ -41,7 +41,7 @@ for testid in tqdm(range(ntests)):
     distances, _, _ = pyamg.graph.bellman_ford(G, centers, method='standard')
     energy_without_tb[testid] = np.sum(distances**2)
 
-np.savez('square_diameters_1_output.npz',
+np.savez('square_diameters_1b_output.npz',
          stddev_with_tb=stddev_with_tb,
          stddev_without_tb=stddev_without_tb,
          energy_with_tb=energy_with_tb,
