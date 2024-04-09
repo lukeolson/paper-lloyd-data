@@ -2,7 +2,7 @@ import numpy as np
 import scipy.linalg as sla
 import scipy.sparse as sparse
 
-def betahat(A, P):
+def betahat(A, P, which):
     r"""
     betahat
 
@@ -29,7 +29,8 @@ def betahat(A, P):
     B = A
 
     eigval, eigvec = sla.eig(C,b=B)
-    idx = np.argmax(np.abs(eigval))
+    idx = np.argsort(np.abs(eigval))[which]
+    #idx = np.argmax(np.abs(eigval))
     bhat = eigval[idx]
     bhatvec = eigvec[:,idx]
 
