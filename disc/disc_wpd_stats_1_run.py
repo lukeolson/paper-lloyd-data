@@ -2,7 +2,7 @@
 import numpy as np
 import pyamg
 
-with np.load('./disc_n=10249_mesh_and_matrix.npz', allow_pickle=True) as data:
+with np.load('./disc_n=10244_p=1_mesh_and_matrix.npz', allow_pickle=True) as data:
     A = data['A'].tolist()
     V = data['V']
     E = data['E']

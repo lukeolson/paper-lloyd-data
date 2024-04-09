@@ -2,7 +2,7 @@ import numpy as np
 import gmsh
 from pyamg.gallery import fem
 
-cases = [(1, 7), (1, 72), (2, 72), (1, 329.0)]
+cases = [(1, 7), (1, 72), (2, 72), (1, 328.0)]
 
 for case in cases:
     porder, perimeter_points = case
