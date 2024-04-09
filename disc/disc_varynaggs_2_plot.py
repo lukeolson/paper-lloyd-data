@@ -13,7 +13,7 @@ A = datacore['A'].tolist()
 data = {d: data[d].tolist() for d in data.files}
 naggslist = np.array(list(data.keys()))
 # naggslist = naggslist.astype(float).astype(int)
-print(naggslist)
+# print(naggslist)
 
 fs = fig_size.singlefull
 set_figure(width=fs['width'], height=(2/3)*fs['width'])
@@ -25,7 +25,7 @@ kwargs = {'color': '0.8',
           'edgecolor': 'tab:blue',
           'linewidth': 0.75}
 
-print(len(naggslist))
+# print(len(naggslist))
 for i, naggs in enumerate(naggslist):
     # print(i // ncols, i % ncols)
     axx = ax[i // ncols, i % ncols]

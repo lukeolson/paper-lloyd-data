@@ -10,7 +10,7 @@ with np.load('./disc_n=10244_p=1_mesh_and_matrix.npz', allow_pickle=True) as dat
 n = A.shape[0]
 print(V.shape, E.shape)
 
-seed0 = 348934
+seed0 = 34934
 np.random.seed(seed0)
 ntests = 100
 seeds = np.random.randint(0, 2**32 - 1, ntests)
