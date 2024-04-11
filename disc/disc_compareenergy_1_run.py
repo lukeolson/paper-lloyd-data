@@ -20,15 +20,12 @@ def energy_per_aggregate(ml, e, Te, DTe):
 
 def main():
     print('loading problem...')
-    with np.load('./disc_n=528_mesh_and_matrix.npz', allow_pickle=True) as data:
+    with np.load('./disc_n=528_p=1_mesh_and_matrix.npz', allow_pickle=True) as data:
         A = data['A'].tolist()
         V = data['V']
         E = data['E']
 
-    # mainseed = 35583
-    # mainseed = 100987
-    mainseed = 239999
-    # mainseed = 898767
+    mainseed = 2367199546
 
     print('test 1...')
     np.random.seed(mainseed)
@@ -47,13 +44,15 @@ def main():
                                            keep=True,
                                            )
 
-    beta, e, Te, DTe = amgtheory.betahat(A.toarray(), ml.levels[0].P.toarray())
+    which = -1
+    beta, e, Te, DTe = amgtheory.betahat(A.toarray(), ml.levels[0].P.toarray(), which=which)
     print('Rebalanced lloyd beta: ', beta)
 
     energy = energy_per_aggregate(ml, e, Te, DTe)
     print('rebalanced max energy', energy.max(), energy.sum())
     AggOp_blloyd54 = ml.levels[0].AggOp
     energy_blloyd54 = energy
+    cycle_cx_blloyd54 = ml.cycle_complexity()
 
     n = A.shape[0]
     u0 = np.random.rand(n)
@@ -82,13 +81,14 @@ def main():
                                            keep=True,
                                            )
 
-    beta, e, Te, DTe = amgtheory.betahat(A.toarray(), ml.levels[0].P.toarray())
+    beta, e, Te, DTe = amgtheory.betahat(A.toarray(), ml.levels[0].P.toarray(), which=which)
     print('balanced lloyd beta: ', beta)
 
     energy = energy_per_aggregate(ml, e, Te, DTe)
     print('balanced max energy', energy.max(), energy.sum())
     AggOp_blloyd50 = ml.levels[0].AggOp
     energy_blloyd50 = energy
+    cycle_cx_blloyd50 = ml.cycle_complexity()
 
     n = A.shape[0]
     u0 = np.random.rand(n)
@@ -113,7 +113,7 @@ def main():
                                            keep=True,
                                            )
 
-    beta, e, Te, DTe = amgtheory.betahat(A.toarray(), ml.levels[0].P.toarray())
+    beta, e, Te, DTe = amgtheory.betahat(A.toarray(), ml.levels[0].P.toarray(), which=which)
     print('lloyd beta: ', beta)
 
     energy = energy_per_aggregate(ml, e, Te, DTe)
@@ -121,6 +121,7 @@ def main():
 
     AggOp_lloyd5 = ml.levels[0].AggOp
     energy_lloyd5 = energy
+    cycle_cx_lloyd5 = ml.cycle_complexity()
 
     n = A.shape[0]
     u0 = np.random.rand(n)
@@ -139,6 +140,9 @@ def main():
              res_blloyd54=res_blloyd54,
              res_blloyd50=res_blloyd50,
              res_lloyd5=res_lloyd5,
+             cycle_cx_blloyd54=cycle_cx_blloyd54,
+             cycle_cx_blloyd50=cycle_cx_blloyd50,
+             cycle_cx_lloyd5=cycle_cx_lloyd5,
              V=V, E=E, A=A)
 
 

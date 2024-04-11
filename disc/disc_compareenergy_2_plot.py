@@ -3,7 +3,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from common import set_figure, fig_size
-from pyamg import vis
+#########from pyamg import vis
+from pyamg.vis import aggviz
 
 with np.load('disc_compareenergy_1_output.npz', allow_pickle=True) as data:
     A = data['A'].tolist()
@@ -18,6 +19,9 @@ with np.load('disc_compareenergy_1_output.npz', allow_pickle=True) as data:
     res_blloyd54 = data['res_blloyd54']
     res_blloyd50 = data['res_blloyd50']
     res_lloyd5 = data['res_lloyd5']
+    cycle_cx_blloyd54=data['cycle_cx_blloyd54']
+    cycle_cx_blloyd50=data['cycle_cx_blloyd50']
+    cycle_cx_lloyd5=data['cycle_cx_lloyd5']
 
 fn = np.log10
 
@@ -37,9 +41,9 @@ fig, ax = plt.subplots(ncols=3)
 
 vmax = np.max(np.hstack((fn(energy_lloyd5), fn(energy_blloyd50), fn(energy_blloyd54))))
 vmin = np.min(np.hstack((fn(energy_lloyd5), fn(energy_blloyd50), fn(energy_blloyd54))))
-print(f'{vmin=} {vmax=}')
+#print(f'{vmin=} {vmax=}')
 vmin = -1.5
-print(f'{vmin=} {vmax=}')
+#print(f'{vmin=} {vmax=}')
 
 kwargs = {'color': '0.8',
           'edgecolor': 'tab:blue',
@@ -54,7 +58,7 @@ for i, data in enumerate([
     AggOp = data[0]
     energy = data[1]
     label = data[2]
-    mappable = vis.aggviz.plotaggs(AggOp, V, A, ax=axx,
+    mappable = aggviz.plotaggs(AggOp, V, A, ax=axx,
                                    aggvals=fn(energy),
                                    cmapname='BuPu',
                                    # cmapname='OrRd',
@@ -66,9 +70,11 @@ for i, data in enumerate([
     axx.triplot(V[:, 0], V[:, 1], E, color='0.7', lw=0.25)
     axx.axis('off')
     axx.set_title(f'{label}')
+    axx.text(0.3, -0.1, f'$\\max(\\beta_a)$={10**energy.max():3.1f}', transform=axx.transAxes, ha='left')
+    axx.text(0.3, -0.2, f'$\\mathrm{{mean}}(\\beta_a)$={(10**energy).mean():3.1f}', transform=axx.transAxes, ha='left')
 
-finalenergy = fn(energy)
-print(finalenergy, finalenergy.min(), finalenergy.max(), finalenergy.mean())
+finalenergy = fn(energy_lloyd5)
+#print(finalenergy, finalenergy.min(), finalenergy.max(), finalenergy.mean())
 cb = fig.colorbar(mappable, ax=ax[2], shrink=0.4,
                   ticks=[1, 0, -1],
                   format=lambda x, _: f'$10^{{{x}}}$')
@@ -88,6 +94,15 @@ fs = fig_size.single13
 set_figure(width=2*fs['width'], height=2*fs['height'])
 fig, ax = plt.subplots()
 
+rho_lloyd5 = (res_lloyd5[-1]/res_lloyd5[-1-5])**(1/5)
+wpd_lloyd5 = cycle_cx_lloyd5 / (-np.log10(rho_lloyd5))
+
+rho_blloyd50 = (res_blloyd50[-1]/res_blloyd50[-1-5])**(1/5)
+wpd_blloyd50 = cycle_cx_blloyd50 / (-np.log10(rho_blloyd50))
+
+rho_blloyd54 = (res_blloyd54[-1]/res_blloyd54[-1-5])**(1/5)
+wpd_blloyd54 = cycle_cx_blloyd54 / (-np.log10(rho_blloyd54))
+
 ax.semilogy(res_lloyd5, label='Standard Lloyd', color='tab:red', solid_capstyle='round')
 ax.semilogy(res_blloyd50, label='Balanced Lloyd', color='tab:blue', solid_capstyle='round')
 ax.semilogy(res_blloyd54, label='Rebalanced Lloyd', color='tab:green', solid_capstyle='round')
@@ -95,6 +110,26 @@ ax.legend()
 ax.set_xlabel('Iterations')
 ax.set_ylabel(r'$\|r\|$')
 ax.grid(True)
+
+m = 7
+w = 1.5
+res = res_lloyd5
+wpd = wpd_lloyd5
+angle = np.rad2deg(np.arctan2(np.log10(res[-1]) - np.log10(res[-m]), m))
+ax.text(len(res)-m, res[-m], f'WPD={wpd:.1f}', fontsize=6, color='tab:red', ha='left',
+        rotation=w*angle, va='bottom', rotation_mode='anchor')
+
+res = res_blloyd50
+wpd = wpd_blloyd50
+angle = np.rad2deg(np.arctan2(np.log10(res[-1]) - np.log10(res[-m]), m))
+ax.text(len(res)-m, res[-m], f'WPD={wpd:.1f}', fontsize=6, color='tab:blue', ha='left',
+        rotation=w*angle, va='bottom', rotation_mode='anchor')
+
+res = res_blloyd54
+wpd = wpd_blloyd54
+angle = np.rad2deg(np.arctan2(np.log10(res[-1]) - np.log10(res[-m]), m))
+ax.text(len(res)-m, res[-m], f'WPD={wpd:.1f}', fontsize=6, color='tab:green', ha='left',
+        rotation=w*angle, va='bottom', rotation_mode='anchor')
 
 figname = 'disc_compareenergy_convergence.pdf'
 import sys  # noqa
