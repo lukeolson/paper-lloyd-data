@@ -9259,11 +9259,11 @@
     </Proxy>
     <Proxy group="sources" type="XMLUnstructuredGridReader" id="9272" servers="1">
       <Property name="FileName" id="9272.FileName" number_of_elements="1">
-        <Element index="0" value="/Users/lukeo/repos/paper-lloyd/1_paper_to_write/code/restricted_channel/output-edges.vtu"/>
+        <Element index="0" value="restricted_channel_3d_output_edges.vtu"/>
         <Domain name="files" id="9272.FileName.files"/>
       </Property>
       <Property name="FileNameInfo" id="9272.FileNameInfo" number_of_elements="1">
-        <Element index="0" value="/Users/lukeo/repos/paper-lloyd/1_paper_to_write/code/restricted_channel/output-edges.vtu"/>
+        <Element index="0" value="restricted_channel_3d_output_edges.vtu"/>
       </Property>
       <Property name="TimestepValues" id="9272.TimestepValues"/>
       <Property name="CellArrayInfo" id="9272.CellArrayInfo" number_of_elements="2">
@@ -9291,11 +9291,11 @@
     </Proxy>
     <Proxy group="sources" type="XMLUnstructuredGridReader" id="9313" servers="1">
       <Property name="FileName" id="9313.FileName" number_of_elements="1">
-        <Element index="0" value="/Users/lukeo/repos/paper-lloyd/1_paper_to_write/code/restricted_channel/output-mesh.vtu"/>
+        <Element index="0" value="restricted_channel_3d_output_mesh.vtu"/>
         <Domain name="files" id="9313.FileName.files"/>
       </Property>
       <Property name="FileNameInfo" id="9313.FileNameInfo" number_of_elements="1">
-        <Element index="0" value="/Users/lukeo/repos/paper-lloyd/1_paper_to_write/code/restricted_channel/output-mesh.vtu"/>
+        <Element index="0" value="restricted_channel_3d_output_mesh.vtu"/>
       </Property>
       <Property name="TimestepValues" id="9313.TimestepValues"/>
       <Property name="CellArrayInfo" id="9313.CellArrayInfo"/>
@@ -9316,11 +9316,11 @@
     </Proxy>
     <Proxy group="sources" type="XMLUnstructuredGridReader" id="9342" servers="1">
       <Property name="FileName" id="9342.FileName" number_of_elements="1">
-        <Element index="0" value="/Users/lukeo/repos/paper-lloyd/1_paper_to_write/code/restricted_channel/output-tets.vtu"/>
+        <Element index="0" value="restricted_channel_3d_output_tets.vtu"/>
         <Domain name="files" id="9342.FileName.files"/>
       </Property>
       <Property name="FileNameInfo" id="9342.FileNameInfo" number_of_elements="1">
-        <Element index="0" value="/Users/lukeo/repos/paper-lloyd/1_paper_to_write/code/restricted_channel/output-tets.vtu"/>
+        <Element index="0" value="restricted_channel_3d_output_tets.vtu"/>
       </Property>
       <Property name="TimestepValues" id="9342.TimestepValues"/>
       <Property name="CellArrayInfo" id="9342.CellArrayInfo" number_of_elements="2">
@@ -9348,11 +9348,11 @@
     </Proxy>
     <Proxy group="sources" type="XMLUnstructuredGridReader" id="9371" servers="1">
       <Property name="FileName" id="9371.FileName" number_of_elements="1">
-        <Element index="0" value="/Users/lukeo/repos/paper-lloyd/1_paper_to_write/code/restricted_channel/output-tris.vtu"/>
+        <Element index="0" value="restricted_channel_3d_output_tris.vtu"/>
         <Domain name="files" id="9371.FileName.files"/>
       </Property>
       <Property name="FileNameInfo" id="9371.FileNameInfo" number_of_elements="1">
-        <Element index="0" value="/Users/lukeo/repos/paper-lloyd/1_paper_to_write/code/restricted_channel/output-tris.vtu"/>
+        <Element index="0" value="restricted_channel_3d_output_tris.vtu"/>
       </Property>
       <Property name="TimestepValues" id="9371.TimestepValues"/>
       <Property name="CellArrayInfo" id="9371.CellArrayInfo" number_of_elements="2">
@@ -10000,34 +10000,34 @@
       <Item id="261" name="MaterialLibrary1"/>
     </ProxyCollection>
     <ProxyCollection name="pq_helper_proxies.10112">
-      <Item id="9891" name="DataAxesGrid" logname="output-mesh.vtu(UnstructuredGridRepresentation)/DataAxesGrid/GridAxesRepresentation"/>
-      <Item id="9928" name="GlyphType" logname="output-mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ArrowSource"/>
-      <Item id="9939" name="GlyphType" logname="output-mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ConeSource"/>
-      <Item id="9950" name="GlyphType" logname="output-mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CubeSource"/>
-      <Item id="9961" name="GlyphType" logname="output-mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CylinderSource"/>
-      <Item id="9972" name="GlyphType" logname="output-mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/LineSource"/>
-      <Item id="9983" name="GlyphType" logname="output-mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/SphereSource"/>
-      <Item id="9994" name="GlyphType" logname="output-mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/GlyphSource2D"/>
-      <Item id="10005" name="GlyphType" logname="output-mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/PipelineConnection"/>
-      <Item id="10084" name="OSPRayScaleFunction" logname="output-mesh.vtu(UnstructuredGridRepresentation)/SurfaceRepresentation/OSPRayScaleFunction/PiecewiseFunction"/>
-      <Item id="10038" name="OpacityTransferFunction" logname="output-mesh.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/OpacityTransferFunction/PiecewiseFunction"/>
-      <Item id="9906" name="PolarAxes" logname="output-mesh.vtu(UnstructuredGridRepresentation)/PolarAxes/PolarAxesRepresentation"/>
-      <Item id="10039" name="ScaleTransferFunction" logname="output-mesh.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/ScaleTransferFunction/PiecewiseFunction"/>
+      <Item id="9891" name="DataAxesGrid" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/DataAxesGrid/GridAxesRepresentation"/>
+      <Item id="9928" name="GlyphType" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ArrowSource"/>
+      <Item id="9939" name="GlyphType" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ConeSource"/>
+      <Item id="9950" name="GlyphType" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CubeSource"/>
+      <Item id="9961" name="GlyphType" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CylinderSource"/>
+      <Item id="9972" name="GlyphType" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/LineSource"/>
+      <Item id="9983" name="GlyphType" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/SphereSource"/>
+      <Item id="9994" name="GlyphType" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/GlyphSource2D"/>
+      <Item id="10005" name="GlyphType" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/PipelineConnection"/>
+      <Item id="10084" name="OSPRayScaleFunction" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/SurfaceRepresentation/OSPRayScaleFunction/PiecewiseFunction"/>
+      <Item id="10038" name="OpacityTransferFunction" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/OpacityTransferFunction/PiecewiseFunction"/>
+      <Item id="9906" name="PolarAxes" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/PolarAxes/PolarAxesRepresentation"/>
+      <Item id="10039" name="ScaleTransferFunction" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/ScaleTransferFunction/PiecewiseFunction"/>
     </ProxyCollection>
     <ProxyCollection name="pq_helper_proxies.10352">
-      <Item id="10131" name="DataAxesGrid" logname="output-edges.vtu(UnstructuredGridRepresentation)/DataAxesGrid/GridAxesRepresentation"/>
-      <Item id="10168" name="GlyphType" logname="output-edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ArrowSource"/>
-      <Item id="10179" name="GlyphType" logname="output-edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ConeSource"/>
-      <Item id="10190" name="GlyphType" logname="output-edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CubeSource"/>
-      <Item id="10201" name="GlyphType" logname="output-edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CylinderSource"/>
-      <Item id="10212" name="GlyphType" logname="output-edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/LineSource"/>
-      <Item id="10223" name="GlyphType" logname="output-edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/SphereSource"/>
-      <Item id="10234" name="GlyphType" logname="output-edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/GlyphSource2D"/>
-      <Item id="10245" name="GlyphType" logname="output-edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/PipelineConnection"/>
-      <Item id="10324" name="OSPRayScaleFunction" logname="output-edges.vtu(UnstructuredGridRepresentation)/SurfaceRepresentation/OSPRayScaleFunction/PiecewiseFunction"/>
-      <Item id="10278" name="OpacityTransferFunction" logname="output-edges.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/OpacityTransferFunction/PiecewiseFunction"/>
-      <Item id="10146" name="PolarAxes" logname="output-edges.vtu(UnstructuredGridRepresentation)/PolarAxes/PolarAxesRepresentation"/>
-      <Item id="10279" name="ScaleTransferFunction" logname="output-edges.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/ScaleTransferFunction/PiecewiseFunction"/>
+      <Item id="10131" name="DataAxesGrid" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/DataAxesGrid/GridAxesRepresentation"/>
+      <Item id="10168" name="GlyphType" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ArrowSource"/>
+      <Item id="10179" name="GlyphType" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ConeSource"/>
+      <Item id="10190" name="GlyphType" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CubeSource"/>
+      <Item id="10201" name="GlyphType" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CylinderSource"/>
+      <Item id="10212" name="GlyphType" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/LineSource"/>
+      <Item id="10223" name="GlyphType" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/SphereSource"/>
+      <Item id="10234" name="GlyphType" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/GlyphSource2D"/>
+      <Item id="10245" name="GlyphType" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/PipelineConnection"/>
+      <Item id="10324" name="OSPRayScaleFunction" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/SurfaceRepresentation/OSPRayScaleFunction/PiecewiseFunction"/>
+      <Item id="10278" name="OpacityTransferFunction" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/OpacityTransferFunction/PiecewiseFunction"/>
+      <Item id="10146" name="PolarAxes" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/PolarAxes/PolarAxesRepresentation"/>
+      <Item id="10279" name="ScaleTransferFunction" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/ScaleTransferFunction/PiecewiseFunction"/>
     </ProxyCollection>
     <ProxyCollection name="pq_helper_proxies.6672">
       <Item id="6669" name="AxesGrid" logname="RenderView1/AxesGrid/GridAxes3DActor"/>
@@ -10045,49 +10045,49 @@
       <Item id="9382" name="RepresentationAnimationHelper"/>
     </ProxyCollection>
     <ProxyCollection name="pq_helper_proxies.9613">
-      <Item id="9392" name="DataAxesGrid" logname="output-tets.vtu(UnstructuredGridRepresentation)/DataAxesGrid/GridAxesRepresentation"/>
-      <Item id="9429" name="GlyphType" logname="output-tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ArrowSource"/>
-      <Item id="9440" name="GlyphType" logname="output-tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ConeSource"/>
-      <Item id="9451" name="GlyphType" logname="output-tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CubeSource"/>
-      <Item id="9462" name="GlyphType" logname="output-tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CylinderSource"/>
-      <Item id="9473" name="GlyphType" logname="output-tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/LineSource"/>
-      <Item id="9484" name="GlyphType" logname="output-tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/SphereSource"/>
-      <Item id="9495" name="GlyphType" logname="output-tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/GlyphSource2D"/>
-      <Item id="9506" name="GlyphType" logname="output-tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/PipelineConnection"/>
-      <Item id="9585" name="OSPRayScaleFunction" logname="output-tets.vtu(UnstructuredGridRepresentation)/SurfaceRepresentation/OSPRayScaleFunction/PiecewiseFunction"/>
-      <Item id="9539" name="OpacityTransferFunction" logname="output-tets.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/OpacityTransferFunction/PiecewiseFunction"/>
-      <Item id="9407" name="PolarAxes" logname="output-tets.vtu(UnstructuredGridRepresentation)/PolarAxes/PolarAxesRepresentation"/>
-      <Item id="9540" name="ScaleTransferFunction" logname="output-tets.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/ScaleTransferFunction/PiecewiseFunction"/>
+      <Item id="9392" name="DataAxesGrid" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/DataAxesGrid/GridAxesRepresentation"/>
+      <Item id="9429" name="GlyphType" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ArrowSource"/>
+      <Item id="9440" name="GlyphType" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ConeSource"/>
+      <Item id="9451" name="GlyphType" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CubeSource"/>
+      <Item id="9462" name="GlyphType" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CylinderSource"/>
+      <Item id="9473" name="GlyphType" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/LineSource"/>
+      <Item id="9484" name="GlyphType" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/SphereSource"/>
+      <Item id="9495" name="GlyphType" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/GlyphSource2D"/>
+      <Item id="9506" name="GlyphType" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/PipelineConnection"/>
+      <Item id="9585" name="OSPRayScaleFunction" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/SurfaceRepresentation/OSPRayScaleFunction/PiecewiseFunction"/>
+      <Item id="9539" name="OpacityTransferFunction" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/OpacityTransferFunction/PiecewiseFunction"/>
+      <Item id="9407" name="PolarAxes" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/PolarAxes/PolarAxesRepresentation"/>
+      <Item id="9540" name="ScaleTransferFunction" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/ScaleTransferFunction/PiecewiseFunction"/>
     </ProxyCollection>
     <ProxyCollection name="pq_helper_proxies.9872">
-      <Item id="9651" name="DataAxesGrid" logname="output-tris.vtu(UnstructuredGridRepresentation)/DataAxesGrid/GridAxesRepresentation"/>
-      <Item id="9688" name="GlyphType" logname="output-tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ArrowSource"/>
-      <Item id="9699" name="GlyphType" logname="output-tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ConeSource"/>
-      <Item id="9710" name="GlyphType" logname="output-tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CubeSource"/>
-      <Item id="9721" name="GlyphType" logname="output-tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CylinderSource"/>
-      <Item id="9732" name="GlyphType" logname="output-tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/LineSource"/>
-      <Item id="9743" name="GlyphType" logname="output-tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/SphereSource"/>
-      <Item id="9754" name="GlyphType" logname="output-tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/GlyphSource2D"/>
-      <Item id="9765" name="GlyphType" logname="output-tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/PipelineConnection"/>
-      <Item id="9844" name="OSPRayScaleFunction" logname="output-tris.vtu(UnstructuredGridRepresentation)/SurfaceRepresentation/OSPRayScaleFunction/PiecewiseFunction"/>
-      <Item id="9798" name="OpacityTransferFunction" logname="output-tris.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/OpacityTransferFunction/PiecewiseFunction"/>
-      <Item id="9666" name="PolarAxes" logname="output-tris.vtu(UnstructuredGridRepresentation)/PolarAxes/PolarAxesRepresentation"/>
-      <Item id="9799" name="ScaleTransferFunction" logname="output-tris.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/ScaleTransferFunction/PiecewiseFunction"/>
+      <Item id="9651" name="DataAxesGrid" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/DataAxesGrid/GridAxesRepresentation"/>
+      <Item id="9688" name="GlyphType" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ArrowSource"/>
+      <Item id="9699" name="GlyphType" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/ConeSource"/>
+      <Item id="9710" name="GlyphType" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CubeSource"/>
+      <Item id="9721" name="GlyphType" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/CylinderSource"/>
+      <Item id="9732" name="GlyphType" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/LineSource"/>
+      <Item id="9743" name="GlyphType" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/SphereSource"/>
+      <Item id="9754" name="GlyphType" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/GlyphSource2D"/>
+      <Item id="9765" name="GlyphType" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/Glyph3DRepresentation/GlyphType/PipelineConnection"/>
+      <Item id="9844" name="OSPRayScaleFunction" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/SurfaceRepresentation/OSPRayScaleFunction/PiecewiseFunction"/>
+      <Item id="9798" name="OpacityTransferFunction" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/OpacityTransferFunction/PiecewiseFunction"/>
+      <Item id="9666" name="PolarAxes" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/PolarAxes/PolarAxesRepresentation"/>
+      <Item id="9799" name="ScaleTransferFunction" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)/PointGaussianRepresentation/ScaleTransferFunction/PiecewiseFunction"/>
     </ProxyCollection>
     <ProxyCollection name="representations">
-      <Item id="9613" name="UnstructuredGridRepresentation1" logname="output-tets.vtu(UnstructuredGridRepresentation)"/>
-      <Item id="9872" name="UnstructuredGridRepresentation2" logname="output-tris.vtu(UnstructuredGridRepresentation)"/>
-      <Item id="10112" name="UnstructuredGridRepresentation3" logname="output-mesh.vtu(UnstructuredGridRepresentation)"/>
-      <Item id="10352" name="UnstructuredGridRepresentation4" logname="output-edges.vtu(UnstructuredGridRepresentation)"/>
+      <Item id="9613" name="UnstructuredGridRepresentation1" logname="restricted_channel_3d_output_tets.vtu(UnstructuredGridRepresentation)"/>
+      <Item id="9872" name="UnstructuredGridRepresentation2" logname="restricted_channel_3d_output_tris.vtu(UnstructuredGridRepresentation)"/>
+      <Item id="10112" name="UnstructuredGridRepresentation3" logname="restricted_channel_3d_output_mesh.vtu(UnstructuredGridRepresentation)"/>
+      <Item id="10352" name="UnstructuredGridRepresentation4" logname="restricted_channel_3d_output_edges.vtu(UnstructuredGridRepresentation)"/>
     </ProxyCollection>
     <ProxyCollection name="settings">
       <Item id="267" name="ColorPalette"/>
     </ProxyCollection>
     <ProxyCollection name="sources">
-      <Item id="9272" name="output-edges.vtu" logname="output-edges.vtu"/>
-      <Item id="9313" name="output-mesh.vtu" logname="output-mesh.vtu"/>
-      <Item id="9342" name="output-tets.vtu" logname="output-tets.vtu"/>
-      <Item id="9371" name="output-tris.vtu" logname="output-tris.vtu"/>
+      <Item id="9272" name="restricted_channel_3d_output_edges.vtu" logname="restricted_channel_3d_output_edges.vtu"/>
+      <Item id="9313" name="restricted_channel_3d_output_mesh.vtu" logname="restricted_channel_3d_output_mesh.vtu"/>
+      <Item id="9342" name="restricted_channel_3d_output_tets.vtu" logname="restricted_channel_3d_output_tets.vtu"/>
+      <Item id="9371" name="restricted_channel_3d_output_tris.vtu" logname="restricted_channel_3d_output_tris.vtu"/>
     </ProxyCollection>
     <ProxyCollection name="timekeeper">
       <Item id="256" name="TimeKeeper1"/>
