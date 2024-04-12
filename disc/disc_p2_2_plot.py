@@ -74,7 +74,8 @@ ax.set_ylabel(r'$\|r\|$')
 ax.grid(True)
 ax.text(0.7, 0.3, f'WPD={wpd_std:.1f}', fontsize=6,
         color='tab:gray', ha='left', transform=ax.transAxes)
-ax.text(0.55, 0.07, f'WPD={wpd_lloyd5:.1f}', fontsize=6,
+ax.text(0.5, 0.16, f'WPD={wpd_lloyd5:.1f}', fontsize=6,
+        bbox=dict(facecolor='w',edgecolor='w',lw=0,pad=1),
         color='tab:red', ha='left', transform=ax.transAxes)
 ax.text(0.2, 0.15, f'WPD={wpd_blloyd54:.1f}', fontsize=6,
         color='tab:green', ha='left', transform=ax.transAxes)
