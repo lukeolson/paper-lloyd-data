@@ -32,7 +32,7 @@ fs = fig_size.singlefull
 set_figure(width=fs['width'], height=(1/3)*fs['width'])
 fig, ax = plt.subplots(nrows=1, ncols=2, sharey=True)
 
-x = np.arange(0, singletons_without_tb.max() + 1.5, dtype=int)
+x = np.arange(0, singletons_without_tb.max() + 0.5, dtype=int)
 y = np.array([np.count_nonzero(singletons_without_tb == s) for s in x])
 x = x[1:]  # only plot >=1
 y = y[1:]  # only plot >=1
