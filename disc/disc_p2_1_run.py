@@ -43,7 +43,7 @@ res = []
 _ = ml.solve(b, x0=u0, tol=1e-12, maxiter=200, residuals=res)
 AggOp_blloyd54 = ml.levels[0].AggOp
 res_blloyd54 = res
-cycle_cx_rblloyd = ml.cycle_complexity()
+cycle_cx_blloyd54 = ml.cycle_complexity()
 
 print('test lloyd...')
 np.random.seed(mainseed)
@@ -100,9 +100,9 @@ np.savez('disc_p2_1_output.npz',
          res_std=res_std,
          V=V, E=E, A=A,
          V2=V2, E2=E2,
-         cycle_cx_std=cycle_cx_std,
+         cycle_cx_blloyd54=cycle_cx_blloyd54,
          cycle_cx_lloyd5=cycle_cx_lloyd5,
-         cycle_cx_rblloyd=cycle_cx_rblloyd
+         cycle_cx_std=cycle_cx_std
          )
 
 # import matplotlib.pyplot as plt

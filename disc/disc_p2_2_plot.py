@@ -20,7 +20,7 @@ with np.load('./disc_p2_1_output.npz', allow_pickle=True) as data:
     res_std = data['res_std']
     cycle_cx_std = data['cycle_cx_std']
     cycle_cx_lloyd5 = data['cycle_cx_lloyd5']
-    cycle_cx_rblloyd = data['cycle_cx_rblloyd']
+    cycle_cx_blloyd54 = data['cycle_cx_blloyd54']
 
 fs = fig_size.singlefull
 set_figure(width=fs['width'], height=fs['height'])
@@ -56,16 +56,28 @@ fs = fig_size.single12
 set_figure(width=fs['width'], height=fs['height'])
 fig, ax = plt.subplots()
 
-idx = cycle_cx_std * np.arange(len(res_std))
-ax.semilogy(idx, res_std, label='Greedy', color='tab:gray', solid_capstyle='round')
-idx = cycle_cx_lloyd5 * np.arange(len(res_lloyd5))
-ax.semilogy(idx, res_lloyd5, label='Standard Lloyd', color='tab:red', solid_capstyle='round')
-idx = cycle_cx_rblloyd * np.arange(len(res_blloyd54))
-ax.semilogy(idx, res_blloyd54, label='Rebalanced Lloyd', color='tab:green', solid_capstyle='round')
+rho_std = (res_std[-1]/res_std[-1-5])**(1/5)
+wpd_std = cycle_cx_std / (-np.log10(rho_std))
+
+rho_lloyd5 = (res_lloyd5[-1]/res_lloyd5[-1-5])**(1/5)
+wpd_lloyd5 = cycle_cx_lloyd5 / (-np.log10(rho_lloyd5))
+
+rho_blloyd54 = (res_blloyd54[-1]/res_blloyd54[-1-5])**(1/5)
+wpd_blloyd54 = cycle_cx_blloyd54 / (-np.log10(rho_blloyd54))
+
+ax.semilogy(res_std, label='Greedy', color='tab:gray', solid_capstyle='round')
+ax.semilogy(res_lloyd5, label='Standard Lloyd', color='tab:red', solid_capstyle='round')
+ax.semilogy(res_blloyd54, label='Rebalanced Lloyd', color='tab:green', solid_capstyle='round')
 ax.legend()
-ax.set_xlabel('Iterations * cost')
+ax.set_xlabel('Iterations')
 ax.set_ylabel(r'$\|r\|$')
 ax.grid(True)
+ax.text(0.7, 0.3, f'WPD={wpd_std:.1f}', fontsize=6,
+        color='tab:gray', ha='left', transform=ax.transAxes)
+ax.text(0.55, 0.07, f'WPD={wpd_lloyd5:.1f}', fontsize=6,
+        color='tab:red', ha='left', transform=ax.transAxes)
+ax.text(0.2, 0.15, f'WPD={wpd_blloyd54:.1f}', fontsize=6,
+        color='tab:green', ha='left', transform=ax.transAxes)
 
 figname = 'disc_p2_convergence.pdf'
 

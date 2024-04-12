@@ -54,10 +54,15 @@ for case in cases:
     def f(x, y):
         return np.ones_like(x)
     mesh = fem.Mesh(V, E, degree=porder)
+    V2 = None
+    E2 = None
+    if porder == 2:
+        V2 = mesh.V2
+        E2 = mesh.E2
     A, b = fem.gradgradform(mesh, f=f, degree=porder)
     A = A.tocsr()
     p = porder
-    np.savez_compressed(f'disc_{n=}_{p=}_mesh_and_matrix.npz', V=V, E=E, A=A, b=b)
+    np.savez_compressed(f'disc_{n=}_{p=}_mesh_and_matrix.npz', V=V, E=E, A=A, b=b, V2=V2, E2=E2)
 
 plot = False
 if plot:
