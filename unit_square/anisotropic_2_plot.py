@@ -15,6 +15,14 @@ with np.load('./anisotropic_1_output.npz', allow_pickle=True) as data:
     AggOp_lloyd5 = data['AggOp_lloyd5'].tolist()
     res_blloyd54 = data['res_blloyd54']
     res_lloyd5 = data['res_lloyd5']
+    cycle_cx_blloyd54 = data['cycle_cx_blloyd54']
+    cycle_cx_lloyd5 = data['cycle_cx_lloyd5']
+
+rho_lloyd5 = (res_lloyd5[-1]/res_lloyd5[-1-5])**(1/5)
+wpd_lloyd5 = cycle_cx_lloyd5 / (-np.log10(rho_lloyd5))
+
+rho_blloyd54 = (res_blloyd54[-1]/res_blloyd54[-1-5])**(1/5)
+wpd_blloyd54 = cycle_cx_blloyd54 / (-np.log10(rho_blloyd54))
 
 def quadplot(x, y, quatrangles, ax=None, **kwargs):
     if not ax:
@@ -65,6 +73,10 @@ ax.legend()
 ax.set_xlabel('Iterations')
 ax.set_ylabel(r'$\|r\|$')
 ax.grid(True)
+ax.text(0.6, 0.4, f'WPD={wpd_lloyd5:.1f}', fontsize=6,
+        color='tab:red', ha='left', transform=ax.transAxes)
+ax.text(0.3, 0.15, f'WPD={wpd_blloyd54:.1f}', fontsize=6,
+        color='tab:green', ha='left', transform=ax.transAxes)
 
 figname = 'anisotropic_convergence.pdf'
 

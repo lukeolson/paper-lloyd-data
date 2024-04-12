@@ -23,7 +23,6 @@ mainseed = 35583
 # mainseed = 898767
 ppa  = 12
 
-print('test rblloyd...')
 np.random.seed(mainseed)
 ml = pyamg.smoothed_aggregation_solver(A,
                                        aggregate=('balanced lloyd',
@@ -50,8 +49,9 @@ res = []
 _ = ml.solve(b, x0=u0, tol=1e-12, maxiter=200, residuals=res)
 AggOp_blloyd54 = ml.levels[0].AggOp
 res_blloyd54 = res
+ml_blloyd54 = ml
+cycle_cx_blloyd54 = ml.cycle_complexity()
 
-print('test lloyd...')
 np.random.seed(mainseed)
 ml = pyamg.smoothed_aggregation_solver(A,
                                        aggregate=('lloyd', {'measure': 'inv',
@@ -74,10 +74,14 @@ res = []
 _ = ml.solve(b, x0=u0, tol=1e-12, maxiter=200, residuals=res)
 AggOp_lloyd5 = ml.levels[0].AggOp
 res_lloyd5 = res
+ml_lloyd5 = ml
+cycle_cx_lloyd5 = ml.cycle_complexity()
 
 np.savez('./anisotropic_1_output.npz',
          AggOp_blloyd54=AggOp_blloyd54,
          AggOp_lloyd5=AggOp_lloyd5,
          res_blloyd54=res_blloyd54,
          res_lloyd5=res_lloyd5,
+         cycle_cx_blloyd54=cycle_cx_blloyd54,
+         cycle_cx_lloyd5=cycle_cx_lloyd5,
          V=V, E=E, A=A)
