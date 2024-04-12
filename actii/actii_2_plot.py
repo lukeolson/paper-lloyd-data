@@ -83,16 +83,16 @@ cdata = {3: colors_edges,
          10: colors_tets}  # make sure it's a tuple
 
 cells = {10: E2V}
-pyamg.vis.write_vtu(V=V, cells=cells, fname='output-mesh.vtu')
+pyamg.vis.write_vtu(V=V, cells=cells, fname='actii_output_mesh.vtu')
 
 cells = {10: list_tets}
 cdata = {10: colors_tets}  # make sure it's a tuple
-pyamg.vis.write_vtu(V=V, cells=cells, fname='output-tets.vtu', cdata=cdata)
+pyamg.vis.write_vtu(V=V, cells=cells, fname='actii_output_tets.vtu', cdata=cdata)
 
 cells = {5: list_tris}
 cdata = {5: colors_tris}  # make sure it's a tuple
-pyamg.vis.write_vtu(V=V, cells=cells, fname='output-tris.vtu', cdata=cdata)
+pyamg.vis.write_vtu(V=V, cells=cells, fname='actii_output_tris.vtu', cdata=cdata)
 
 cells = {3: list_edges}
 cdata = {3: colors_edges}  # make sure it's a tuple
-pyamg.vis.write_vtu(V=V, cells=cells, fname='output-edges.vtu', cdata=cdata)
+pyamg.vis.write_vtu(V=V, cells=cells, fname='actii_output_edges.vtu', cdata=cdata)
