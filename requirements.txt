@@ -6,4 +6,4 @@ shapely
 pandas
 seaborn
 
-git+https://github.com/pyamg/pyamg.git@09113ab#egg=pyamg
+git+https://github.com/pyamg/pyamg.git@c03b75c#egg=pyamg

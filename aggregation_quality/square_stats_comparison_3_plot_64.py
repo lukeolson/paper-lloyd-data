@@ -42,6 +42,7 @@ sns.histplot(data=df,
              color='tab:red',
              stat='count',
              label='standard Lloyd',
+             bins=bins,
              **kwargs,
              ax=ax[0])
 
@@ -50,6 +51,7 @@ sns.histplot(data=df,
              color='tab:blue',
              stat='count',
              label='balanced Lloyd',
+             bins=bins,
              **kwargs,
              ax=ax[0])
 
@@ -58,6 +60,7 @@ sns.histplot(data=df,
              color='tab:green',
              stat='count',
              label='rebalanced Lloyd',
+             bins=bins,
              **kwargs,
              ax=ax[0])
 
@@ -67,6 +70,7 @@ sns.histplot(data=df,
              color='tab:red',
              stat='count',
              label='standard Lloyd',
+             bins=bins,
              **kwargs,
              ax=ax[1])
 
@@ -76,6 +80,7 @@ sns.histplot(data=df,
              color='tab:blue',
              label='balanced Lloyd',
              legend=True,
+             bins=bins,
              **kwargs,
              ax=ax[1])
 
@@ -84,6 +89,7 @@ sns.histplot(data=df,
              stat='count',
              color='tab:green',
              label='rebalanced Lloyd',
+             bins=bins,
              **kwargs,
              ax=ax[1])
 
@@ -93,6 +99,7 @@ sns.histplot(data=df,
              color='tab:red',
              stat='count',
              label='standard Lloyd',
+             bins=bins,
              **kwargs,
              ax=ax[2])
 
@@ -101,6 +108,7 @@ sns.histplot(data=df,
              stat='count',
              color='tab:blue',
              label='balanced Lloyd',
+             bins=bins,
              **kwargs,
              ax=ax[2])
 
@@ -109,6 +117,7 @@ sns.histplot(data=df,
              stat='count',
              color='tab:green',
              label='rebalanced Lloyd',
+             bins=bins,
              **kwargs,
              ax=ax[2])
 

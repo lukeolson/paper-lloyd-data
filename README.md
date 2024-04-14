@@ -4,7 +4,7 @@ This repository contains data for the manuscript "Generalizing Lloyd’s algorit
 
 **Code**
 
-All algorithms for the paper are implemented in [PyAMG](https://github.com/pyamg/pyamg), specifically with commit  [09113ab5a6f79466a8c1eacfc1716b3042da83d3](https://github.com/pyamg/pyamg/tree/09113ab5a6f79466a8c1eacfc1716b3042da83d3).
+All algorithms for the paper are implemented in [PyAMG](https://github.com/pyamg/pyamg), specifically with commit  [c03b75c827788a75fb4997c9154b3611063cd204](https://github.com/pyamg/pyamg/tree/c03b75c827788a75fb4997c9154b3611063cd204).
 
 There are a number of supporting tools for the examples, as listed in [requirements.txt](requirements.txt) and with pinned versions in [requirements-freeze.txt](requirements-freeze.txt):
   - `numpy`, `scipy`: numerical data
@@ -70,6 +70,9 @@ $64\times 64$ mesh.
     - Additional example, anisotropic diffusion.
   - `bad_aggs_*.py`
     - Two example clusterings from Lloyd clustering on a $6 \times 6$ mesh.
+- `actii`
+  - `actii_*.py`
+    - Additional example, ACTII mesh.
 
 ### Image Gallery
 
@@ -94,4 +97,4 @@ $64\times 64$ mesh.
 | `aggregation_quality` | <img src="images/square_diameters_energy.png" width=300px/> |
 | `aggregation_quality` | <img src="images/square_stats_comparison_all_n.png" width=300px/> |
 | `aggregation_quality` | <img src="images/square_diameters_zero.png" width=300px/> |
-| `actii` | <img src="images/actii-full-2.png" width=300px/> |
+| `actii` | <img src="images/actii-full-inset.png" width=300px/> |
