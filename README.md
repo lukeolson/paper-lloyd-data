@@ -1,7 +1,6 @@
 # paper-lloyd-data
 
-This repository contains data for the manuscript *Generalizing Lloyd’s Algorithm for Graph Clustering
-*, by Tareq Zaman, Nicolas Nytko, Ali Taghibakhshi, Scott MacLachlan, Luke Olson, and Matthew West. SIAM Journal on Scientific Computing, 2024. https://epubs.siam.org/doi/10.1137/23M1556800.
+This repository contains data for the manuscript *Generalizing Lloyd’s Algorithm for Graph Clustering*, by Tareq Zaman, Nicolas Nytko, Ali Taghibakhshi, Scott MacLachlan, Luke Olson, and Matthew West. SIAM Journal on Scientific Computing, 2024. https://epubs.siam.org/doi/10.1137/23M1556800.
 
 ```
 @article{doi:10.1137/23M1556800,
