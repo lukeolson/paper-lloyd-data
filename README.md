@@ -14,6 +14,7 @@ This repository contains data for the manuscript *Generalizing Lloyd’s Algorit
     doi = {10.1137/23M1556800},
     URL = {https://doi.org/10.1137/23M1556800},
     eprint = {https://doi.org/10.1137/23M1556800}
+}
 ```
 
 **Code**
