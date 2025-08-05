@@ -18,5 +18,5 @@ seaborn==0.13.2
 setuptools==69.5.1
 shapely==2.0.3
 six==1.16.0
-tqdm==4.66.2
+tqdm==4.66.3
 tzdata==2024.1
